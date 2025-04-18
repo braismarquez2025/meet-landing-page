@@ -1,0 +1,14 @@
+body {
+    @include breakpoint(mobile) {
+        background-image: url(../../assets/mobile/image-footer.jpg);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 100% rem(395);
+    } 
+
+    @include breakpoint(tablet) {
+        background-image: none;
+    }
+
+    
+}

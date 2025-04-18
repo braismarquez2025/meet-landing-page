@@ -1,0 +1,106 @@
+@import '../abstracts/functions';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: rem(64);
+    padding-bottom: rem(64);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+
+    @include breakpoint(tablet) {
+        background-image: url(../../assets/tablet/image-footer.jpg);
+        margin-top: rem(-29);
+        height: rem(320);
+    }
+
+    @include breakpoint(desktop) {
+        background-image: url(../../assets/desktop/image-footer.jpg);
+        height: rem(312);
+    }
+
+    .container {
+        @include breakpoint(tablet) {
+            width: rem(504);
+        }
+
+        @include breakpoint(desktop) {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 2fr;
+            width: 100%;
+            gap: rem(62);
+            grid-template-areas: 'title texto boton';
+            align-items: center;
+        }
+    }
+
+
+    &_title {
+        @include text-preset-2;
+        color: white; 
+        margin-bottom: rem(24);
+
+        @include breakpoint(desktop) {
+            margin-left: rem(160);
+            grid-area: title;
+            text-align: start;
+        }
+    }
+
+    &_description {
+        @include text-preset-4;
+        color: white; 
+        margin-bottom: rem(24);
+
+        @include breakpoint(desktop) {
+            width: rem(400);
+            grid-area: texto;
+            text-align: start;
+        }
+    }
+
+    &_button {
+        @include button;
+        background-color: $purple-600;
+                
+        &:hover {
+            background-color: #B18BDD;
+        }
+
+        @include breakpoint(desktop) {
+            margin-right: rem(140);
+            grid-area: boton;
+            width: rem(200);
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        top: rem(-29);
+        background-color: rgba(0, 150, 180, 0.8);
+        z-index: 0;
+
+        @include breakpoint(tablet) {
+            height: rem(320);
+            top: 0;
+        }
+
+        @include breakpoint(desktop) {
+            height: rem(312);
+            top: 0;
+        }
+      }
+    
+      * {
+        position: relative;
+        z-index: 1;
+      }
+
+}

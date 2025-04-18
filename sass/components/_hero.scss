@@ -1,0 +1,103 @@
+@import '../abstracts/functions';
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_circle {
+        border-radius: 99%;
+        border: 1px solid $slate-300;
+        position: relative;
+        margin-top: rem(144);
+        margin-bottom: rem(64);
+
+        p{
+            padding: 16px 19px;
+            color: $slate-600;
+            @include text-preset-5;
+        }
+
+        &::before {
+            @include before;
+        }
+    }
+
+    &_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: rem(64);
+
+        @include breakpoint(tablet) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include breakpoint(desktop) {
+            gap: 32px;
+        }
+
+        
+        img {
+            width: rem(147.5);
+            height: rem(144);
+            border-radius: rem(12);
+
+            @include breakpoint(desktop) {
+                width: rem(256);
+                height: rem(256);
+            }
+        }
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint(tablet) {
+            width: rem(504);
+        }
+
+        &-pretitle {
+            @include text-preset-3;
+            color: $cyan-600;
+            margin-bottom: rem(16);
+            text-transform: uppercase;
+        }
+
+        &-title {
+            @include text-preset-2;
+            color: $slate-900;
+            margin-bottom: rem(32);
+            text-align: center;
+        }
+
+        &-description {
+            @include text-preset-4;
+            color: $slate-600;
+            text-align: center;
+        }
+
+        &-circle {
+            border-radius: 99%;
+            border: 1px solid $slate-300;
+            position: relative;
+            margin-top: rem(144);
+            background-color: white;
+            z-index: 1;
+    
+            p{
+                padding: 16px 19px;
+                color: $slate-600;
+                @include text-preset-5;
+            }
+    
+            &::before {
+                @include before;
+            }
+        }
+    }
+}

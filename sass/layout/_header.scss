@@ -1,0 +1,134 @@
+@import '../abstracts/functions';
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_logo {
+        width: rem(118);
+        height: rem(28);
+        margin-bottom: rem(64);
+        margin-top: rem(24);
+    }
+
+    &_img-hero {
+        width: rem(433);
+        height: rem(160);
+        margin-bottom: rem(48);
+
+        @include breakpoint(tablet) {
+            width: rem(820);
+            height: rem(303);
+        }
+
+        @include breakpoint(desktop) {
+            display: none;
+        }
+    }
+
+    &_content{
+
+        @include breakpoint(tablet) {
+            width: rem(448);
+        }
+        
+        &-title {
+            @include text-preset-1;
+            text-align: center;
+            color: $slate-900;
+            margin-bottom: rem(24);
+        }
+
+        &-subtitle {
+            @include text-preset-4;
+            color: $slate-600;
+            text-align: center;
+        }
+
+
+        &-buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            @include breakpoint(tablet) {
+                flex-direction: row;
+                gap: rem(17);
+                margin-top: rem(24);
+            }
+            
+            .button {
+                @include button;
+            }
+
+
+            &-1 {
+                background-color: $cyan-600;
+                margin-top: rem(24);
+                margin-bottom: rem(16);
+
+                @include breakpoint(tablet) {
+                    margin: 0;
+                }
+    
+                span {
+                    color: $cyan-300;
+                }
+    
+                &:hover {
+                    background-color: #71C0D4;
+                }
+            }
+    
+            &-2 {
+                background-color: $purple-600;
+                
+    
+                &:hover {
+                    background-color: #B18BDD;
+                }
+            }
+        }
+    }
+
+    &_container {
+        @include breakpoint(desktop) {
+            display: flex;
+            margin-top: rem(64);
+            gap: rem(100);
+            align-items: center;
+        }
+
+        &-right {
+            @include breakpoint(mobile) {
+                display: none;
+            }
+
+            @include breakpoint(tablet) {
+                display: none;
+            }
+
+            @include breakpoint(desktop) {
+                display: block;
+            }
+        }
+
+        &-left {
+            @include breakpoint(mobile) {
+                display: none;
+            }
+
+            @include breakpoint(tablet) {
+                display: none;
+            }
+
+            @include breakpoint(desktop) {
+                display: block;
+            }
+        }
+
+    }
+}

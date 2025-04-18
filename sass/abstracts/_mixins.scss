@@ -1,0 +1,122 @@
+@import '../abstracts/functions';
+
+@mixin breakpoint($bp) {
+  @if $bp == mobile {
+    @media (min-width: $bp-mobile) {
+      @content;
+    }
+  }
+
+
+  @if $bp == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  }
+
+
+  @if $bp == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin text-preset-1() {
+  font-family: $font-primary;
+  font-size: 46px;
+
+  @include breakpoint(desktop) {
+    font-size: 64px;
+  }
+  line-height: 110%;
+  letter-spacing: 0px;
+  font-weight: 900;
+}
+
+@mixin text-preset-2() {
+  font-family: $font-primary;
+  font-size: 33px;
+
+  @include breakpoint(desktop) {
+    font-size: 42px;
+  }
+  line-height: 110%;
+  letter-spacing: 0px;
+  font-weight: 900;
+}
+
+@mixin text-preset-3() {
+  font-family: $font-primary;
+  font-size: 14px;
+  line-height: 110%;
+  letter-spacing: 4px;
+  font-weight: 900;
+
+  @include breakpoint(desktop) {
+    font-size: 18px;
+  }
+} 
+
+@mixin text-preset-4() {
+  font-family: $font-primary;
+  font-size: 16px;
+
+  @include breakpoint(desktop) {
+    font-size: 20px;
+  }
+  line-height: 130%;
+  letter-spacing: 0px;
+  font-weight: 600;
+} 
+
+@mixin text-preset-5() {
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing:  0px;
+  font-weight: 900;
+} 
+
+
+@mixin button() {
+  padding: 16px 40px;
+  border-radius: rem(30);
+  border: none;
+  color: white;
+  @include text-preset-5;
+}
+
+@mixin before() {
+  content: '';
+  height: rem(80);
+  width: rem(1);
+  position: absolute;
+  top: rem(-80);
+  left: rem(29);
+  background-color: $slate-300;
+}
+
+
+@mixin breakpoint($bp) {
+  @if $bp == mobile {
+    @media (min-width: $bp-mobile) {
+      @content;
+    }
+  }
+
+  @if $bp == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  }
+}
+
+$bp-tablet: 768px;
+$bp-desktop: 1440px;
