@@ -184,14 +184,14 @@
 }
 @media (min-width: 768px) {
   .footer {
-    background-image: url("/assets/tablet/image-footer.jpg");
+    background: url("/assets/tablet/image-footer.jpg");
     margin-top: -1.8125rem;
     height: 20rem;
   }
 }
 @media (min-width: 1440px) {
   .footer {
-    background-image: url("/assets/desktop/image-footer.jpg");
+    background: url("/assets/desktop/image-footer.jpg");
     height: 19.5rem;
   }
 }

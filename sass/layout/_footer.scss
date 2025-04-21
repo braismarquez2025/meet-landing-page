@@ -14,13 +14,13 @@
     z-index: 0;
 
     @include breakpoint(tablet) {
-        background-image: url('/assets/tablet/image-footer.jpg');
+        background: url('/assets/tablet/image-footer.jpg');
         margin-top: rem(-29);
         height: rem(320);
     }
 
     @include breakpoint(desktop) {
-        background-image: url('/assets/desktop/image-footer.jpg');
+        background: url('/assets/desktop/image-footer.jpg');
         height: rem(312);
     }
 
